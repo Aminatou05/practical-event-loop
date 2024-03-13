@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Create an HTML Element
+
+
+// // Cache the HTML Element in a JavaScript Variable
+// const primeNumbersDiv = document.getElementById('primeNumbersList');
+// // Write a Function to Generate Prime Numbers
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+  
+  function generatePrimeNumbers(n) {
+    let primes = [];
+    for (let i = 2; i <= n; i++) {
+      if (isPrime(i)) {
+        primes.push(i);
+      }
+    }
+    return primes;
+  }
+//   Add Prime Numbers to the HTML Element
+const primeNumbers = generatePrimeNumbers(10000);
+primeNumbersDiv.textContent = primeNumbers.join(', ');
+// Alert the User
+alert('Prime numbers calculation completed!'); 
+</script>
+</body>
+</html>
